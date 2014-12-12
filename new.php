@@ -64,9 +64,9 @@
                 <!-- list with choices indicated by the -->
                 <!-- <option> tags -->
                <select name = "industry">
-                  <option>正義</option>
-                  <option>頂新</option>
-                  <option>北海</option>
+                  <option value = "正義">正義</option>
+                  <option value = "頂新">頂新</option>
+                  <option value = "北海">北海</option>
                </select>
             </label>
          </p>
@@ -79,7 +79,7 @@
 	  
 	  
 		<h1>更換油品後上架清冊</h1>
-	<form method = "post" action = "new_replesment.php">
+	<form method = "post" action = "new_replcement.php">
 
          <p><label>產品名稱: 
                <input name = "product" type = "text" size = "25">

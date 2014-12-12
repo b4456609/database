@@ -1,25 +1,12 @@
-<html>
-   <head>
-       <title>gossip</title>
-	   <meta charset='utf-8' />
-	   <style>
-			table, th, td {
-				 border: 1px solid black;
-			}
-		</style>
-   </head>
- <body><?php
+<?php
    
-   //not sure
 	include("conn.php");
 	
 	try {
-	$full_query = "insert into company values ('" .$_POST['company']. "','" . $_POST['name']. "')";
-		echo $full_query;
+		$full_query = "INSERT into company values ('" .$_POST['company']. "','" . $_POST['name']. "')";
 		$conn->query($full_query);
 		
-		$full_query = "insert into hazard_industry(product_name, company, industry) values ('" . $_POST['product'] . "','" . $_POST['company']. "','" . $_POST['industry']. "')";
-		echo $full_query;
+		$full_query = "INSERT into hazard_industry(product_name, company, industry) values ('" . $_POST['product'] . "','" . $_POST['company']. "','" . $_POST['industry']. "')";
 		$conn->query($full_query);
 		
 
@@ -28,6 +15,4 @@
 		echo "Error: " . $e->getMessage();
 	}
 	$conn = null;
-	?>
-	 </body>
-</html>
+?>
