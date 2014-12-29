@@ -13,37 +13,16 @@
     <div id="main">
         <?php include("header.php"); ?>
         <div id="site_content">
-			<?php
-   
-			//not sure
-			include("conn.php");
-			
-			echo "<table>
-				<tr>
-				<th>product</th>
-				<th>package</th>
-				<th>address</th>
-				<th>industry</th>
-				</tr>";
-			
-			try {
-				$sql = "SELECT product_name, company, address, industry FROM hazard_industry natural join company";
-				foreach ($conn->query($sql) as $row) {
-					echo "<tr>";
-					echo "<td>" . $row['product_name'] . "</td>";
-					echo "<td>" . $row['company'] . "</td>";
-					echo "<td>" . $row['address'] . "</td>";
-					echo "<td>" . $row['industry'] . "</td>";
-					echo "</tr>";
-				}
-			}
-			catch(PDOException $e){
-				echo "Error: " . $e->getMessage();
-			}
-			$conn = null;
-			echo "</table>";
-			?>
-        </div>
+<form name="form" method="post" action="check.php">
+
+帳號：<input type="text" name="id" /> <br>
+
+密碼：<input type="password" name="pwd" /> <br>
+
+<input type="submit" name="button" value="登入" />
+<a href="register.php">申請帳號</a>
+</form>
+</div>
         <footer>
             <p>洪晟瑋 潘科維 范振原 林豐偉</p>
         </footer>
@@ -60,7 +39,3 @@
 </body>
 
 </html>
-
-
-
-

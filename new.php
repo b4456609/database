@@ -1,14 +1,19 @@
+<!DOCTYPE HTML>
+<?php session_start();?>
 <html>
-   <head>
-       <title>gossip</title>
-	   <style>
-			table, th, td {
-				 border: 1px solid black;
-			}
-		</style>
-   </head>
- <body>
-	<header><img src = "header.png"></header>
+<head>
+    <title>gossip</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <!-- modernizr enables HTML5 elements and feature detects -->
+    <script type="text/javascript" src="js/modernizr-1.5.min.js"></script>
+</head>
+
+<body>
+    <div id="main">
+        <?php include("header.php"); ?>
+		
+        <div id="site_content">
 	<!-- 新增新產品 -->
 	<h1>下游業者之下架產品清單</h1>
 	<form method = "post" action = "new_product.php">
@@ -144,5 +149,21 @@
          </p>   
       </form>
 
- </body>
+ </div>
+        <footer>
+            <p>洪晟瑋 潘科維 范振原 林豐偉</p>
+        </footer>
+    </div>
+    <!-- javascript at the bottom for fast page loading -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.easing-sooper.js"></script>
+    <script type="text/javascript" src="js/jquery.sooperfish.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('ul.sf-menu').sooperfish();
+        });
+    </script>
+</body>
+
 </html>
+

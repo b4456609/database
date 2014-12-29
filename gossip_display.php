@@ -2,7 +2,7 @@
 <?php session_start();?>
 <html>
 <head>
-    <title>company product</title>
+    <title>gossip</title>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <!-- modernizr enables HTML5 elements and feature detects -->
@@ -12,38 +12,40 @@
 <body>
     <div id="main">
         <?php include("header.php"); ?>
+		
         <div id="site_content">
-			<?php
+   <?php
    
-			//not sure
-			include("conn.php");
-			
-			echo "<table>
-				<tr>
-				<th>product</th>
-				<th>package</th>
-				<th>address</th>
-				<th>industry</th>
-				</tr>";
-			
-			try {
-				$sql = "SELECT product_name, company, address, industry FROM hazard_industry natural join company";
-				foreach ($conn->query($sql) as $row) {
-					echo "<tr>";
-					echo "<td>" . $row['product_name'] . "</td>";
-					echo "<td>" . $row['company'] . "</td>";
-					echo "<td>" . $row['address'] . "</td>";
-					echo "<td>" . $row['industry'] . "</td>";
-					echo "</tr>";
-				}
-			}
-			catch(PDOException $e){
-				echo "Error: " . $e->getMessage();
-			}
-			$conn = null;
-			echo "</table>";
-			?>
-        </div>
+   //not sure
+	include("conn.php");
+	
+	echo "<table>
+		<tr>
+		<th>product_name</th>
+		<th>company</th>
+		<th>industry</th>
+		<th>address</th>
+		</tr>";
+	
+	try {
+		$sql = "SELECT product_name, company, industry , address FROM gossip_product natural join hazard_industry natural join company";
+		
+		foreach ($conn->query($sql) as $row) {
+			echo "<tr>";
+			echo "<td>" . $row['product_name'] . "</td>";
+			echo "<td>" . $row['company'] . "</td>";
+			echo "<td>" . $row['industry'] . "</td>";
+			echo "<td>" . $row['address'] . "</td>";
+			echo "</tr>";
+		}
+	}
+	catch(PDOException $e){
+		echo "Error: " . $e->getMessage();
+	}
+	$conn = null;
+	echo "</table>";
+	?>
+ </div>
         <footer>
             <p>洪晟瑋 潘科維 范振原 林豐偉</p>
         </footer>
@@ -60,7 +62,3 @@
 </body>
 
 </html>
-
-
-
-

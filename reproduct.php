@@ -13,37 +13,37 @@
     <div id="main">
         <?php include("header.php"); ?>
         <div id="site_content">
-			<?php
-   
-			//not sure
-			include("conn.php");
+		<?php
+		
+		include("conn.php");
+		
+		$sql = 'SELECT * FROM replacement';	
+		
+		
+		echo "<table border='1'>
+		<tr>
+		<th>產品名稱</th>
+		<th>販賣公司</th>
+		<th>製造商</th>
+		</tr>";
+		try {
+			foreach ($conn->query($sql) as $row) {
+				echo  "<tr>";
+				echo  "<td>" . $row['product_name'] . "</td>";
+				echo  "<td>" . $row['industry'] . "</td>";
+				echo  "<td>" . $row['company'] . "</td>";
+				echo "</tr>";
 			
-			echo "<table>
-				<tr>
-				<th>product</th>
-				<th>package</th>
-				<th>address</th>
-				<th>industry</th>
-				</tr>";
+			}
 			
-			try {
-				$sql = "SELECT product_name, company, address, industry FROM hazard_industry natural join company";
-				foreach ($conn->query($sql) as $row) {
-					echo "<tr>";
-					echo "<td>" . $row['product_name'] . "</td>";
-					echo "<td>" . $row['company'] . "</td>";
-					echo "<td>" . $row['address'] . "</td>";
-					echo "<td>" . $row['industry'] . "</td>";
-					echo "</tr>";
-				}
-			}
-			catch(PDOException $e){
-				echo "Error: " . $e->getMessage();
-			}
-			$conn = null;
 			echo "</table>";
-			?>
-        </div>
+		}
+		catch(PDOException $e){
+			echo "Error: " . $e->getMessage();
+		}
+		$conn = null;
+		?>
+	</div>
         <footer>
             <p>洪晟瑋 潘科維 范振原 林豐偉</p>
         </footer>
@@ -60,7 +60,3 @@
 </body>
 
 </html>
-
-
-
-
