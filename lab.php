@@ -13,37 +13,61 @@
     <div id="main">
         <?php include("header.php"); ?>
         <div id="site_content">
-		<?php
-		
-		include("conn.php");
-		
-		$sql = 'SELECT * FROM replacement';	
-		
-		
-		echo "<table >
+  <?php
+			include("conn.php");
+		$sql ="SELECT * FROM examine";
+		//print_r(mysql_fetch_row($result));
+		echo " 
+		<table >
 		<tr>
-		<th>產品名稱</th>
-		<th>販賣公司</th>
-		<th>製造商</th>
+		<th>項目 </th>
+		<th>檢測方法 </th>
 		</tr>";
-		try {
-			foreach ($conn->query($sql) as $row) {
-				echo  "<tr>";
-				echo  "<td>" . $row['product_name'] . "</td>";
-				echo  "<td>" . $row['industry'] . "</td>";
-				echo  "<td>" . $row['company'] . "</td>";
-				echo "</tr>";
+		
+		foreach ($conn->query($sql) as $row)
+		{
+			echo "<tr>";
+			echo "<td>".$row['item']."</td>";
+			echo "<td>".$row['method']."</td>";	
+			echo "</tr>";
 			
-			}
 			
-			echo "</table>";
 		}
-		catch(PDOException $e){
-			echo "Error: " . $e->getMessage();
+		echo " </table>";
+		echo "</tr>";	
+   ?>  
+   <?php
+		
+	
+		$sql = "SELECT * FROM laboratory natural join examine ";
+		echo " 
+		<table >
+		<tr>
+		<th>城市</th>
+		<th>名稱 </th>
+		<th>地址 </th>
+		<th>電話 </th>
+		<th>項目 </th>
+		<th>檢測方法 </th>
+		</tr>";
+		
+		foreach ($conn->query($sql) as $row)
+		{
+			echo "<tr>";
+			echo "<td>".$row['city']."</td>";
+			echo "<td>".$row['name']."</td>";
+			echo "<td>".$row['address']."</td>";
+			echo "<td>".$row['phone']."</td>";
+			echo "<td>".$row['item']."</td>";
+			echo "<td>".$row['method']."</td>";
+				
+			echo "</tr>";
+			
 		}
-		$conn = null;
-		?>
-	</div>
+		echo " </table>";
+		echo "</tr>";	
+   ?>
+   </div>
         <footer>
             <p>洪晟瑋 潘科維 范振原 林豐偉</p>
         </footer>
@@ -60,3 +84,6 @@
 </body>
 
 </html>
+
+
+

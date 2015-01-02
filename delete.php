@@ -42,4 +42,17 @@ else if($_GET['delete'] == 2){
 		
 	}
 }
+else if($_GET['delete'] == 3){
+
+	try {
+		echo "正在刪除! 完成後自動返回上一頁";
+		$sql = "delete from company where company = '".$_GET['company2']."'";
+		$conn->query($sql);
+		echo '<meta http-equiv=REFRESH CONTENT=2;url=mem.php>';
+	}
+	catch(PDOException $e){
+		echo "刪除失敗!: " . $e->getMessage();
+		
+	}
+}
 ?>

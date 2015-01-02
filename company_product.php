@@ -27,7 +27,7 @@
 				</tr>";
 			
 			try {
-				$sql = "SELECT product_name, company, address, industry FROM hazard_industry natural join company";
+				$sql = "SELECT product_name, company, address, industry FROM hazard_industry natural join company WHERE id not in(SELECT id from gossip_product)";
 				foreach ($conn->query($sql) as $row) {
 					echo "<tr>";
 					echo "<td>" . $row['product_name'] . "</td>";

@@ -8,7 +8,7 @@
 		
 		$full_query = "INSERT into hazard_industry(product_name, company, industry) values ('" . $_POST['product'] . "','" . $_POST['company']. "','" . $_POST['industry']. "')";
 		$conn->query($full_query);
-		
+		echo '<meta http-equiv=REFRESH CONTENT=1;url=mem.php>';
 
 	}
 	catch(PDOException $e){
