@@ -12,7 +12,7 @@
 				</li>
 				<li><a href="#">資料檢索</a>
 					<ul>
-						<li><a href="lab.php">檢驗項目<br>實驗室清單</a>
+						<li><a href="#">檢驗項目<br>實驗室清單</a>
 						</li>
 						<li><a href="reproduct.php">更換油品後上架清冊</a>
 						</li>

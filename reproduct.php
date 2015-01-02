@@ -20,7 +20,7 @@
 		$sql = 'SELECT * FROM replacement';	
 		
 		
-		echo "<table >
+		echo "<table border='1'>
 		<tr>
 		<th>產品名稱</th>
 		<th>販賣公司</th>

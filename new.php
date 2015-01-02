@@ -91,15 +91,11 @@
             </label></p>
 			
 		<p><label>業者名稱: 
-               <input name = "company" type = "text" size = "25">
+               <input name = "industry" type = "text" size = "25">
             </label></p>
 		
 		<p><label>使用廠商: 
-                  <select name = "industry">
-                  <option value = "正義">正義</option>
-                  <option value = "頂新">頂新</option>
-                  <option value = "北海">北海</option>
-               </select>
+               <input name = "company" type = "text" size = "25">
             </label></p>
  
          <p>
@@ -128,13 +124,7 @@
             </label></p>
 			
 		<p><label>item: 
-                <select name = "item">
-                  <option value = "酸價">酸價</option>
-                  <option value = "食品中黃麴毒素">食品中黃麴毒素</option>
-                  <option value = "食用油脂中總極性化合物">食用油脂中總極性化合物</option>
-				  <option value = "食用油脂中苯駢芘">食用油脂中苯駢芘</option>
-                  <option value = "食用油脂中重金屬">食用油脂中重金屬</option>
-               </select>
+               <input name = "item" type = "text" size = "25">
             </label></p>
 		<!-- 應該要從資料庫拿出檢驗的項目給使用者勾-->
          <p>

@@ -19,7 +19,7 @@
 		
 		$sql = 'SELECT * FROM company_product';				
 		
-		echo "<table >
+		echo "<table border='1'>
 		<tr>
 		<th>產品名稱</th>
 		<th>包裝種類</th>
